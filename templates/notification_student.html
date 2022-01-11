@@ -1,0 +1,81 @@
+{% extends "try.html" %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+</head>
+
+<body>
+    <style>
+        .both {
+            width: 50%;
+            margin-left: 3%;
+            margin-top: 3%;
+        }
+
+        .heading {
+            font-size: 175%;
+            font-weight: 600;
+            border-bottom: .02em solid #16192c;
+        }
+
+        .full {
+            text-align: center;
+            border: 5px solid #253551;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 4.5% 5% 2% 5%;
+            font-size: 100%;
+        }
+        .bl {
+            height: auto;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: auto;
+            padding-top:1%;
+            border: 2px solid black;
+        }
+        .l {
+            font-weight: 600;
+            font-size: 135%;
+        }
+        .t1 {
+            font-size: 1em;
+            padding: 0.8em;
+        }
+        @media (max-width: 500px) {
+            .both {
+                width: 100%;
+                margin-top: 3%;
+                margin-left: auto;
+                margin-right: auto;
+                float: center;
+            }
+
+            .heading {
+                font-size: 175%;
+                font-weight: 600;
+                border-bottom: .02em solid #16192c;
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="both">
+        <p class="heading">Notifications</p>
+        {% for napproval in napprovals %}
+        <div class="full">
+            <p>{{napproval}}</p>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
+{% endblock content %}
